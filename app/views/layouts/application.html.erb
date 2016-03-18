@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="ROBOTS" content="NOODP" />
   <meta name="viewport" content="initial-scale=1" />
-  <title>appname</title>
+  <title>S3 Bucket Policy generator</title>
   <%= stylesheet_link_tag :application, media: "all" %>
   <%= javascript_include_tag :application %>
 
@@ -12,7 +12,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render "flashes" -%>
-  <%= yield %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="jumbotron">
+          <h1>S3 Bucket Policy generator</h1>
+          <p>Because S3 is awesome, but the policies are awful</p>
+        </div>
+        <%= yield %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center">
+        <p>This tool was brought to you by
+        <%= link_to "Intercity", "https://github.com/intercity/intercity-next", target: "_blank" %> and
+        <%= link_to "Firmhouse", "https://firmhouse.com", target: "_blank" %></p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

@@ -7,3 +7,14 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "rails_bootstrap_forms";
+
+body {
+  padding-top: 40px;
+
+  .jumbotron {
+    text-align: center;
+    h1 {
+      font-size: 30px;
+    }
+  }
+}
