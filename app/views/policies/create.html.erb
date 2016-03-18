@@ -1,0 +1,32 @@
+Policy:<br/>
+
+<pre>
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "<%= @policy.user_arn %>"
+      },
+      "Action": [
+        "s3:DeleteObject",
+      "s3:GetObject",
+      "s3:PutObjectAcl",
+      "s3:PutObject"
+      ],
+      "Resource": "arn:aws:s3:::<%= @policy.bucket_name %>/*"
+    },
+    {
+      "Sid": "AllowPublicRead",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::<%= @policy.bucket_name %>/*"
+    }
+  ]
+}
+</pre>
